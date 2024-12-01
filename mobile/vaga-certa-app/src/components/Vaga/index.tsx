@@ -1,20 +1,24 @@
 import React from "react";
 import { Container,Title,Date,Company, Content,OpenButton } from "./styles";
 import { Feather } from "@expo/vector-icons";
+import type { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useNavigation } from "@react-navigation/native";
+import { RootStackParamList } from '../../utils/Types';
 
-type Props ={
+type Props = {
+    id: number;
     titulo: string;
-    descricao: string;
     dataCadastro: string;
-    telefone: string;
-    status: string;
     empresa: string;
 }
 
-export function Vaga({titulo,descricao,dataCadastro,empresa}:Props){
+type PropsNav = NativeStackScreenProps<RootStackParamList>;
+
+export function Vaga({id,titulo,dataCadastro,empresa}:Props){
+    const navigation = useNavigation<PropsNav['navigation']>();
 
     return(
-        <Container>
+        <Container onPress={() => navigation.navigate('Details', { id })}>
             <Content>
                 <Title>{titulo}</Title>
                 <Date>{dataCadastro}</Date>

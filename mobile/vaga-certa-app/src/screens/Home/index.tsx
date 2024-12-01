@@ -5,20 +5,10 @@ import { Container, TextBemVindo } from "./styles";
 import vagasApi from "../../services/vagasApi";
 import api from "../../services/api";
 import { useUsuario } from '../../context/UsuarioContext';
-
-
-type VagaType = {
-  id: string;
-  titulo: string;
-  descricao: string;
-  dataCadastro: string;
-  telefone: string;
-  status: string;
-  empresa: string;
-};
+import { VagaType } from "../../utils/Types";
 
 export default function Home() {
-  const { usuario, setUsuario } = useUsuario();
+  const { usuario } = useUsuario();
   const [vagas, setVagas] = useState<VagaType[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -73,14 +63,12 @@ export default function Home() {
       </View>
       <FlatList
         data={vagas}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <Vaga
+            id={item.id}
             titulo={item.titulo}
-            descricao={item.descricao}
             dataCadastro={formatarData(item.dataCadastro)}
-            telefone={item.telefone}
-            status={item.status}
             empresa={item.empresa}
           />
         )}

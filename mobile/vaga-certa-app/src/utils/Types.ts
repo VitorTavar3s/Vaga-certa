@@ -1,11 +1,11 @@
-export type VagaProps = {
+export type VagaType = {
     id: number;
-    title: String;
-    date: String;
-    description: String;
-    phone: String;
-    company: String;
-    status: String;
+    titulo: string;
+    descricao: string;
+    dataCadastro: string;
+    telefone: string;
+    status: string;
+    empresa: string;
 };
 
 export type RootStackParamList = {
