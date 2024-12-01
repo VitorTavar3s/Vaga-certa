@@ -11,3 +11,10 @@ export const Container = styled.View`
   padding-top: 50px;
   background-color: f00000;
 `;
+
+export const TextBemVindo = styled.Text`
+  font-size: ${({theme})=>theme.FONT_SIZE.SM}px;
+  font-weight: 700;
+  text-align: center;
+  color: ${({theme})=>theme.COLORS.BLACK};
+`;
