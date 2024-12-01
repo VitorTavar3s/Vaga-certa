@@ -1,8 +1,9 @@
 import { Image } from 'react-native';
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { Wrapper,Container, Form, TextContainer, TextBlack, TextLink, TextLinkContainer } from './styles';
 import api from '../../services/api';
 import { useUsuario } from '../../context/UsuarioContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import BGTop from '../../assets/BGTop.png';
 import vagaTres from '../../assets/vagaTres.jpg'
@@ -26,9 +27,10 @@ export default function Login({ navigation }) {
     
           if (user) {
             setUsuario(user); // Atualiza o usuário no contexto
+            const userJsonFormat = JSON.stringify(user);
+            await AsyncStorage.setItem('@user', userJsonFormat);// Armazena os dados do usuario localmente
             console.log('Login successful', `Welcome, ${user.nome}!`);
             navigation.navigate('Auth', { screen: 'Home' });
-            // navigation.navigate('NextScreen');
           } else {
             console.log('Login failed', 'Email or password is incorrect');
           }
@@ -38,6 +40,21 @@ export default function Login({ navigation }) {
         }
       };
 
+      useEffect(()=>{
+        const getAuthUser = async () => {
+          try{
+            const authUser = await AsyncStorage.getItem('@user');
+            if(authUser){
+              setUsuario(JSON.parse(authUser));// Atualiza o usuário no contexto
+              navigation.navigate('Auth', { screen: 'Home' });
+            }
+          }catch(error){
+              console.error(error)
+          }
+        };
+        getAuthUser();
+      }, [])
+
     return (
         <Wrapper>
             <Image source={vagaTres} />
@@ -46,15 +63,21 @@ export default function Login({ navigation }) {
 
                 <Form>
                     <Logo />
-                    <Input label='E-mail' placeholder='digite seu e-mail' value={email}
-        onChangeText={setEmail}/>
-                    <Input label='Senha' placeholder='digite sua senha' value={senha}
-        onChangeText={setSenha}/>
+                    <Input
+                      label='E-mail'
+                      placeholder='digite seu e-mail'
+                      value={email}
+                      onChangeText={setEmail}/>
+                    <Input
+                      label='Senha'
+                      placeholder='digite sua senha'
+                      value={senha}
+                      onChangeText={setSenha}/>
                     <Button 
-                    title="Entrar" 
-                    noSpacing={true} 
-                    variant='primary'
-                    onPress={handleLogin}
+                      title="Entrar" 
+                      noSpacing={true} 
+                      variant='primary'
+                      onPress={handleLogin}
                     />
                     <TextContainer>
                         <TextBlack>Não tem uma conta?</TextBlack>
