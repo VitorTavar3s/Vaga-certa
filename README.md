@@ -55,79 +55,79 @@ O projeto tem como objetivo facilitar o acesso a oportunidades de emprego e simp
 ## Estrutura da API
 backend/  
 └── api-express/  
-        ├── config/  
-        │       └── database.js  
-        ├── models/  
-        │       ├── usuario.js  
-        │       └── vaga.js  
-        ├── repositories/  
-        │       ├── usuarioRepository.js  
-        │       └── vagaRepository.js  
-    ├── routes/
-    │   ├── usuarios.js
-    │   └── vagas.js
-    ├── database.sqlite
-    ├── package.json
-    ├── package-lock.json
-    ├── README.md
-    └── **server.js**
+    ├── config/  
+    │   └── database.js  
+    ├── models/  
+    │   ├── usuario.js  
+    │   └── vaga.js  
+    ├── repositories/  
+    │   ├── usuarioRepository.js  
+    │   └── vagaRepository.js  
+    ├── routes/  
+    │   ├── usuarios.js  
+    │   └── vagas.js  
+    ├── database.sqlite  
+    ├── package.json  
+    ├── package-lock.json  
+    ├── README.md  
+    └── **server.js**  
 
 ## Estrutura do APP
-mobile/
-└── vaga-certa-app/
-    ├── assets/
-    │   ├── adaptive-icon.png
-    │   ├── favicon.png
-    │   ├── icon.png
-    │   └── splash-icon.png
-    ├── src/
-    │   ├── assets/
-    │   │   ├── BGTop.png
-    │   │   ├── vaga.jpg
-    │   │   ├── vagaEmprego.jpg
-    │   │   └── vagaTres.jpg
-    │   ├── components/
-    │   │   ├── Button/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   ├── Input/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   ├── Logo/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   └── Vaga/
-    │   │       ├── index.tsx
-    │   │       └── styles.ts
-    │   ├── context/
-    │   │   └── UsuarioContext.tsx
-    │   ├── screens/
-    │   │   ├── Details/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   ├── Form/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   ├── Home/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   ├── Login/
-    │   │   │   ├── index.tsx
-    │   │   │   └── styles.ts
-    │   │   └── Profile/
-    │   │       ├── index.tsx
-    │   │       └── styles.ts
-    │   ├── services/
-    │   │   ├── api.ts
-    │   │   ├── usuariosApi.ts
-    │   │   └── vagasApi.ts
-    │   ├── theme/
-    │   │   └── index.ts
-    │   └── utils/
-    │       └── Types.ts
-    ├── app.json
-    ├── **App.tsx**
-    ├── index.ts
-    ├── package.json
-    ├── package-lock.json
-    └── tsconfig.json
+mobile/  
+└── vaga-certa-app/  
+    ├── assets/  
+    │   ├── adaptive-icon.png  
+    │   ├── favicon.png  
+    │   ├── icon.png  
+    │   └── splash-icon.png  
+    ├── src/  
+    │   ├── assets/  
+    │   │   ├── BGTop.png  
+    │   │   ├── vaga.jpg  
+    │   │   ├── vagaEmprego.jpg  
+    │   │   └── vagaTres.jpg  
+    │   ├── components/  
+    │   │   ├── Button/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   ├── Input/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   ├── Logo/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   └── Vaga/  
+    │   │       ├── index.tsx  
+    │   │       └── styles.ts  
+    │   ├── context/  
+    │   │   └── UsuarioContext.tsx  
+    │   ├── screens/  
+    │   │   ├── Details/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   ├── Form/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   ├── Home/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   ├── Login/  
+    │   │   │   ├── index.tsx  
+    │   │   │   └── styles.ts  
+    │   │   └── Profile/  
+    │   │       ├── index.tsx  
+    │   │       └── styles.ts  
+    │   ├── services/  
+    │   │   ├── api.ts  
+    │   │   ├── usuariosApi.ts  
+    │   │   └── vagasApi.ts  
+    │   ├── theme/  
+    │   │   └── index.ts  
+    │   └── utils/  
+    │       └── Types.ts  
+    ├── app.json  
+    ├── **App.tsx**  
+    ├── index.ts  
+    ├── package.json  
+    ├── package-lock.json  
+    └── tsconfig.json  
