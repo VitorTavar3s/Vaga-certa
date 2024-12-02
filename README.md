@@ -35,46 +35,6 @@ O projeto tem como objetivo facilitar o acesso a oportunidades de emprego e simp
 
 ---
 
-
-Aqui está o arquivo README.md para o seu projeto:
-
-markdown
-Copiar código
-# App de Vagas de Emprego
-
-Um aplicativo **React Native** para visualizar vagas de emprego e se conectar diretamente com empresas, integrado a uma **API REST** desenvolvida em **Node.js**. O projeto tem como objetivo facilitar o acesso a oportunidades de emprego e simplificar a comunicação entre candidatos e empregadores.
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-### App React Native:
-- **Linguagem**: TypeScript
-- **Navegação**: React Navigation
-- **Armazenamento local**: AsyncStorage
-- **Requisições HTTP**: Axios
-
-### API Node.js:
-- **Framework**: Express
-- **Banco de Dados**: SQLite
-- **ORM**: Sequelize
-
----
-
-## ⚙️ Funcionalidades
-
-### App React Native:
-- Autenticação de usuários via login.
-- Listagem de vagas de emprego cadastradas.
-- Contato direto com empresas através de número de telefone.
-
-### API Node.js:
-- Gerenciamento de usuários (CRUD).
-- Gerenciamento de vagas de emprego (CRUD).
-- Integração com o banco de dados SQLite via Sequelize.
-
----
-
 ## 🚀 Como Executar o Projeto
 
 ### Pré-requisitos
@@ -93,24 +53,24 @@ Um aplicativo **React Native** para visualizar vagas de emprego e se conectar di
 - POST /api/usuarios: Cadastra um novo usuário.
 
 ## Estrutura da API
--backend/
--└── api-express/
--    ├── config/
--    │   └── database.js
--    ├── models/
--    │   ├── usuario.js
--    │   └── vaga.js
--    ├── repositories/
--    │   ├── usuarioRepository.js
--    │   └── vagaRepository.js
--    ├── routes/
--    │   ├── usuarios.js
--    │   └── vagas.js
--    ├── database.sqlite
--    ├── package.json
--    ├── package-lock.json
--    ├── README.md
--    └── **server.js**
+backend/
+└── api-express/
+    ├── config/
+    │   └── database.js
+    ├── models/
+    │   ├── usuario.js
+    │   └── vaga.js
+    ├── repositories/
+    │   ├── usuarioRepository.js
+    │   └── vagaRepository.js
+    ├── routes/
+    │   ├── usuarios.js
+    │   └── vagas.js
+    ├── database.sqlite
+    ├── package.json
+    ├── package-lock.json
+    ├── README.md
+    └── **server.js**
 
 ## Estrutura do APP
 mobile/
