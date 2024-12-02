@@ -53,24 +53,24 @@ O projeto tem como objetivo facilitar o acesso a oportunidades de emprego e simp
 - POST /api/usuarios: Cadastra um novo usuário.
 
 ## Estrutura da API
-backend/
-└── api-express/
-    ├── config/
-    │   └── database.js
-    ├── models/
-    │   ├── usuario.js
-    │   └── vaga.js
-    ├── repositories/
-    │   ├── usuarioRepository.js
-    │   └── vagaRepository.js
-    ├── routes/
-    │   ├── usuarios.js
-    │   └── vagas.js
-    ├── database.sqlite
-    ├── package.json
-    ├── package-lock.json
-    ├── README.md
-    └── **server.js**
+###backend/
+###└── api-express/
+###    ├── config/
+###    │   └── database.js
+###    ├── models/
+###    │   ├── usuario.js
+###    │   └── vaga.js
+###    ├── repositories/
+###    │   ├── usuarioRepository.js
+###    │   └── vagaRepository.js
+###    ├── routes/
+###    │   ├── usuarios.js
+###    │   └── vagas.js
+###    ├── database.sqlite
+###    ├── package.json
+###    ├── package-lock.json
+###    ├── README.md
+###    └── **server.js**
 
 ## Estrutura do APP
 mobile/
