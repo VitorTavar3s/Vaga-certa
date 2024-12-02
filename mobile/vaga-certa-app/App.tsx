@@ -69,13 +69,31 @@ import FormScreen  from './src/screens/Form';
 import Profile  from './src/screens/Profile';
 import Home from './src/screens/Home';
 import Details  from './src/screens/Details';
+import { useEffect, useState } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
 
 function Auth(){
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      const token = await AsyncStorage.getItem('@user');
+      if (token) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+      }
+    };
+
+    console.log(isAuthenticated)
+    checkAuthentication();
+  }, []);
   
+
   return (
     <Tab.Navigator
     screenOptions={({ route }) => ({
@@ -101,6 +119,8 @@ function Auth(){
       },
     })}
     >
+    {isAuthenticated ? (
+      <>
       <Tab.Screen name="Home">
           {() => (
             <HomeStack.Navigator screenOptions={{ headerShown: false }}>
@@ -110,12 +130,17 @@ function Auth(){
           )}
       </Tab.Screen>
       <Tab.Screen name="Profile" component={Profile} />
+      </>
+    ) : (
+      <Tab.Screen name="Login" component={Login} />
+    )}
     </Tab.Navigator>
   )
 }
 
 
 export default function App() {
+  
   return (
     <UsuarioProvider>
     <ThemeProvider theme={theme}>

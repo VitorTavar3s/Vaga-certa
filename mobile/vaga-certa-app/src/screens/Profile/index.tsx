@@ -66,6 +66,17 @@ export default function Profile({navigation}) {
         }        
     }
 
+    async function handlePressButtonLogout(){
+        try{
+            
+            await AsyncStorage.removeItem('@user')
+
+            navigation.reset({ index: 0, routes: [{name: 'Login'}]})
+        }catch(error){
+            console.error(error)
+        }        
+    }
+
     return (
         <Wrapper>
             <Header>
@@ -107,6 +118,12 @@ export default function Profile({navigation}) {
                     variant='primary'
                     onPress={handlePressButton}
                     />
+                <Button 
+                    title="Logout" 
+                    noSpacing={true} 
+                    variant='secondary'
+                    onPress={handlePressButtonLogout}
+                />
             </Container>
         </Wrapper>
     );
