@@ -93,10 +93,10 @@ Um aplicativo **React Native** para visualizar vagas de emprego e se conectar di
 - POST /api/usuarios: Cadastra um novo usuário.
 
 ## Estrutura da API
-backend/
-└── api-express/
-    ├── config/
-    │   └── database.js
+backend/\n
+└── api-express/\n
+    ├── config/\n
+    │   └── database.js\n
     ├── models/
     │   ├── usuario.js
     │   └── vaga.js
